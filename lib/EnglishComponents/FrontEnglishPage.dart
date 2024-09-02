@@ -57,7 +57,7 @@ class _FrontEnglishPageState extends State<FrontEnglishPage> {
                   ),
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("A To Z",style:GoogleFonts.rubikSprayPaint(
+                    child: Text("A To Z",style:GoogleFonts.pacifico(
                       textStyle: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -87,7 +87,7 @@ class _FrontEnglishPageState extends State<FrontEnglishPage> {
                   ),
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Animals",style:GoogleFonts.rubikSprayPaint(
+                    child: Text("Animals",style:GoogleFonts.pacifico(
                       textStyle: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -122,7 +122,7 @@ class _FrontEnglishPageState extends State<FrontEnglishPage> {
                     ),
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text("Fishes",style:GoogleFonts.rubikSprayPaint(
+                      child: Text("Fishes",style:GoogleFonts.pacifico(
                         textStyle: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
@@ -144,7 +144,7 @@ class _FrontEnglishPageState extends State<FrontEnglishPage> {
                     ),
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text("Puzzels",style:GoogleFonts.rubikSprayPaint(
+                      child: Text("Puzzels",style:GoogleFonts.pacifico(
                         textStyle: TextStyle(
                           color: Colors.black,
                           fontSize: 20,

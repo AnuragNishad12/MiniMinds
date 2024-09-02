@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mini_minds/EnglishComponents/Animals/EnglishComponents/Animals/AnimalDetailsPage/AnimalDetailPage.dart';
+import 'package:mini_minds/EnglishComponents/Animals/EnglishComponents/Animals/AnimalDetailsPage/ElephantDetailPage.dart';
+import 'package:mini_minds/EnglishComponents/Animals/EnglishComponents/Animals/AnimalDetailsPage/WolfDetailPage.dart';
+import 'package:mini_minds/EnglishComponents/Animals/EnglishComponents/Animals/AnimalDetailsPage/WildfoxDetailPage.dart';
+import 'package:mini_minds/EnglishComponents/Animals/EnglishComponents/Animals/AnimalDetailsPage/WildcatDetailPage.dart';
+
+
+
 
 class AnimalsList extends StatefulWidget {
   @override
@@ -11,7 +20,7 @@ class _AnimalsListState extends State<AnimalsList> {
     {'name': 'Bears', 'imagePath': 'Animals/bears.jpeg'},
     {'name': 'Elephants', 'imagePath': 'Animals/elephents.jpeg'},
     {'name': 'Wildcats', 'imagePath': 'Animals/wildcats.jpeg'},
-    {'name': 'Wildfox', 'imagePath': 'Animals/wildfox.jpeg'},
+    {'name': 'Wildfoxs', 'imagePath': 'Animals/wildfox.jpeg'},
     {'name': 'Wolves', 'imagePath': 'Animals/wolfs.jpeg'},
   ];
 
@@ -55,10 +64,86 @@ class _AnimalsListState extends State<AnimalsList> {
 
               final imageUrl = snapshot.data!;
 
-              return Card(
-                child: ListTile(
-                  leading: Image.network(imageUrl),
-                  title: Text(name),
+              return GestureDetector(
+                onTap: () {
+                  // Navigate to the appropriate detail page based on the animal's name
+                  if (name == 'Bears') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AnimalDetailPage(
+                          name: name,
+                          imageUrl: imageUrl,
+                        ),
+                      ),
+                    );
+                  } else if (name == 'Elephants') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ElephantDetailPage(
+                          name: name,
+                          imageUrl: imageUrl,
+                        ),
+                      ),
+                    );
+                  } else if (name == 'Wildcats') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => WildcatDetailPage(
+                          name: name,
+                          imageUrl: imageUrl,
+                        ),
+                      ),
+                    );
+                  } else if (name == 'Wildfoxs') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => WildfoxDetailPage(
+                          name: name,
+                          imageUrl: imageUrl,
+                        ),
+                      ),
+                    );
+                  } else if (name == 'Wolves') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => WolfDetailPage(
+                          name: name,
+                          imageUrl: imageUrl,
+                        ),
+                      ),
+                    );
+                  }
+                },
+                child: Card(
+                  child: Container(
+                    width: double.infinity,
+                    height: 100.0,
+                    child: Row(
+                      children: [
+                        Image.network(
+                          imageUrl,
+                          width: 100.0,
+                          height: 100.0,
+                          fit: BoxFit.cover,
+                        ),
+                        SizedBox(width: 16.0),
+                        Expanded(
+                          child: Text(
+                            name,
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.pacifico(
+                              textStyle: TextStyle(fontSize: 27.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               );
             },
@@ -67,8 +152,6 @@ class _AnimalsListState extends State<AnimalsList> {
       ),
     );
   }
-
-
 
   Future<String> _getImageUrl(String imagePath) async {
     try {
@@ -81,3 +164,5 @@ class _AnimalsListState extends State<AnimalsList> {
     }
   }
 }
+
+
