@@ -68,6 +68,8 @@ class _AnimalsListState extends State<AnimalsList> {
     );
   }
 
+
+
   Future<String> _getImageUrl(String imagePath) async {
     try {
       final ref = FirebaseStorage.instance.ref().child(imagePath);
