@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BrownBear extends StatefulWidget {
-  // final String imageUrl;
-  // final String name;
-  // const BrownBear({Key? key,
-  //   required this.imageUrl,
-  //   required this.name}):super(key: key);
+
 
   @override
   State<BrownBear> createState() => _BrownBearState();
