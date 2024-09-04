@@ -31,7 +31,10 @@ class _BlackBearsState extends State<BlackBears> {
         return AlertDialog(
           content: SizedBox(
             height: 400.0, // Specify a height for the image slider
-            width: MediaQuery.of(context).size.width * 0.8, // Specify a width for the image slider
+            width: MediaQuery
+                .of(context)
+                .size
+                .width * 0.8, // Specify a width for the image slider
             child: ImageSlider(imageUrls: _imageUrls),
           ),
         );
@@ -40,7 +43,8 @@ class _BlackBearsState extends State<BlackBears> {
   }
 
   Future<List<String>> _getImageUrls() async {
-    ListResult result = await FirebaseStorage.instance.ref().child('Animals/Bears/BearsSlider').listAll();
+    ListResult result = await FirebaseStorage.instance.ref().child(
+        'Animals/Bears/BearsSlider').listAll();
     List<String> imageUrls = [];
 
     for (var ref in result.items) {
@@ -79,7 +83,8 @@ class _BlackBearsState extends State<BlackBears> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: GestureDetector(
-                  onTap: _showImageSlider, // Call the method to show the image slider
+                  onTap: _showImageSlider,
+                  // Call the method to show the image slider
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.yellow,
@@ -138,32 +143,33 @@ class _BlackBearsState extends State<BlackBears> {
   }
 }
 
-class ImageSlider extends StatelessWidget {
+
+  class ImageSlider extends StatelessWidget {
   final List<String> imageUrls;
 
   ImageSlider({required this.imageUrls});
 
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider(
-      options: CarouselOptions(
-        height: 300.0, // Ensure a fixed height for each image in the slider
-        viewportFraction: 1.0, // Adjust this to change the image size in the viewport
-      ),
-      items: imageUrls.map((url) {
-        return Builder(
-          builder: (BuildContext context) {
-            return Container(
-              width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.symmetric(horizontal: 5.0),
-              decoration: BoxDecoration(
-                // color: Colors.amber,
-              ),
-              child: Image.network(url, fit: BoxFit.cover),
-            );
-          },
-        );
-      }).toList(),
-    );
+  return CarouselSlider(
+  options: CarouselOptions(
+  height: 300.0, // Ensure a fixed height for each image in the slider
+  viewportFraction: 1.0, // Adjust this to change the image size in the viewport
+  ),
+  items: imageUrls.map((url) {
+  return Builder(
+  builder: (BuildContext context) {
+  return Container(
+  width: MediaQuery.of(context).size.width,
+  margin: EdgeInsets.symmetric(horizontal: 5.0),
+  decoration: BoxDecoration(
+  // color: Colors.amber,
+  ),
+  child: Image.network(url, fit: BoxFit.cover),
+  );
+  },
+  );
+  }).toList(),
+  );
   }
-}
+  }
