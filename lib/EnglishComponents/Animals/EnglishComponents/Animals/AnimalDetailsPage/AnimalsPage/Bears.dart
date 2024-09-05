@@ -2,6 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mini_minds/EnglishComponents/Animals/AnimalDetailsPage/AnimalsPage/BlackBearsArView.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class BlackBears extends StatefulWidget {
   const BlackBears({super.key});
@@ -142,7 +144,12 @@ class _BlackBearsState extends State<BlackBears> {
             bottom: 20,
             right: 20,
             child:InkWell(
-              onTap: (){},
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=>BlackBearsArView())
+                  );
+              },
             child: Container(
                 width: 100.0,
                 height: 100.0,
@@ -176,6 +183,23 @@ class _BlackBearsState extends State<BlackBears> {
   }
 }
 
+
+
+Future<void> checkPermissions() async {
+  // Check the current status of the camera permission
+  var status = await Permission.camera.status;
+
+  if (status.isDenied) {
+    // Request permission if it's not granted
+    await Permission.camera.request();
+  }
+
+  if (status.isPermanentlyDenied) {
+    // Handle the permanently denied case by showing a dialog or redirecting to settings
+    // For example, you might want to show a dialog to the user informing them how to enable permissions in settings
+  }
+}
+
 class ImageSlider extends StatelessWidget {
   final List<String> imageUrls;
 
@@ -205,3 +229,6 @@ class ImageSlider extends StatelessWidget {
     );
   }
 }
+
+
+
