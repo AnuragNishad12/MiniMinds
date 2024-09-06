@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home:FrontEnglishPage(),
-      home:BlackBears(),
+      home:FrontEnglishPage(),
+      // home:BlackBears(),
     );
   }
 }

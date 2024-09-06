@@ -111,10 +111,7 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Panda(
-                          name: name,
-                          imageUrl: imageUrl,
-                        ),
+                        builder: (context) => Panda(),
                       ),
                     );
                   } else if (name == 'Polar Bear') {
@@ -122,8 +119,6 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => PolarBear(
-                          name: name,
-                          imageUrl: imageUrl,
                         ),
                       ),
                     );
@@ -132,8 +127,6 @@ class _AnimalDetailPageState extends State<AnimalDetailPage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => SlothPage(
-                          name: name,
-                          imageUrl: imageUrl,
                         ),
                       ),
                     );
