@@ -42,7 +42,7 @@ class _PolarBearState extends State<PolarBear> {
   Future<List<String>> _getImageUrls() async {
     ListResult result = await FirebaseStorage.instance
         .ref()
-        .child('Animals/Bears/Panda')
+        .child('Animals/Bears/PolarBear')
         .listAll();
     List<String> imageUrls = [];
 

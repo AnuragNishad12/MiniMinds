@@ -2,7 +2,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mini_minds/EnglishComponents/Animals/EnglishComponents/Animals/AnimalDetailsPage/AnimalsPage/AsianElephant.dart';
-
 import 'AnimalsPage/AfricanForestElephant.dart';
 import 'AnimalsPage/AfricanSavanna.dart';
 
@@ -18,7 +17,7 @@ class ElephantDetailPage extends StatefulWidget {
 class _ElephantDetailPageState extends State<ElephantDetailPage> {
   final List<Map<String, String>> animals = [
     {'name': 'AfricanSavannaElephant', 'imagePath': 'Animals/Elephents/African Savanna Elephant.jpeg'},
-    {'name': 'AfricanForestElephant', 'imagePath': 'Animals/Elephents/African Savanna Elephant.jpeg'},
+    {'name': 'AfricanForestElephant', 'imagePath': 'Animals/Elephents/African Forest Elephant.jpeg'},
     {'name': 'AsianElephant', 'imagePath': 'Animals/Elephents/Asian Elephant.jpeg'},
   ];
 
@@ -127,7 +126,7 @@ class _ElephantDetailPageState extends State<ElephantDetailPage> {
                             name,
                             textAlign: TextAlign.center,
                             style: GoogleFonts.pacifico(
-                              textStyle: TextStyle(fontSize: 27.0),
+                              textStyle: TextStyle(fontSize: 20.0),
                             ),
                           ),
                         ),

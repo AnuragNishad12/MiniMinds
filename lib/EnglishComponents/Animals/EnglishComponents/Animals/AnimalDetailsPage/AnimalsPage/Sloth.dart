@@ -42,7 +42,7 @@ class _SlothPageState extends State<SlothPage> {
   Future<List<String>> _getImageUrls() async {
     ListResult result = await FirebaseStorage.instance
         .ref()
-        .child('Animals/Bears/Panda')
+        .child('Animals/Bears/Sloth')
         .listAll();
     List<String> imageUrls = [];
 
