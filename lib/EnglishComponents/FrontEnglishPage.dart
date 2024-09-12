@@ -57,7 +57,7 @@ class _FrontEnglishPageState extends State<FrontEnglishPage> {
                   ),
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("A To Z",style:GoogleFonts.pacifico(
+                    child: Text("A To Z",style:GoogleFonts.luckiestGuy(
                       textStyle: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -87,7 +87,7 @@ class _FrontEnglishPageState extends State<FrontEnglishPage> {
                   ),
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Animals",style:GoogleFonts.pacifico(
+                    child: Text("Animals",style:GoogleFonts.luckiestGuy(
                       textStyle: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -122,7 +122,7 @@ class _FrontEnglishPageState extends State<FrontEnglishPage> {
                     ),
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text("Fishes",style:GoogleFonts.pacifico(
+                      child: Text("Fishes",style:GoogleFonts.luckiestGuy(
                         textStyle: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
@@ -144,7 +144,7 @@ class _FrontEnglishPageState extends State<FrontEnglishPage> {
                     ),
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text("Puzzels",style:GoogleFonts.pacifico(
+                      child: Text("Puzzels",style:GoogleFonts.luckiestGuy(
                         textStyle: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
