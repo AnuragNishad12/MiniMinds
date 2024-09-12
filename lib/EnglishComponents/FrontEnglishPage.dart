@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mini_minds/EnglishComponents/Animals/AnimalsList.dart';
 import 'package:mini_minds/EnglishComponents/AtoZScreen/AZScreen.dart';
 
+import 'Puzzels/PuzzelsScreen.dart';
+
 class FrontEnglishPage extends StatefulWidget {
   const FrontEnglishPage({super.key});
 
@@ -135,7 +137,14 @@ class _FrontEnglishPageState extends State<FrontEnglishPage> {
                       ),
                     ),
                   ),
-                  Container(
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PuzzelsScreen()),
+                      );
+                    },
+                    child: Container(
                     width: 150.0,
                     height: 150.0,
                     decoration: BoxDecoration(
@@ -157,6 +166,7 @@ class _FrontEnglishPageState extends State<FrontEnglishPage> {
                       ),
                     ),
                   ),
+                  )
                 ],
               ),
             ),
